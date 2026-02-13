@@ -62,15 +62,88 @@
     font-family: "Veneer";
     src: url("../assets/fonts/Veneer-Three.woff2");
 }
-	
-.window-app .window-content {
-    background: url(../assets/Background1.webp);
-    background-size: cover;
+.character .window-content, .equippableItem .window-content, .custom-dialog .window-content {
+	background: url(../assets/Background1.webp);
+	background-repeat: no-repeat;
+ 	background-size: 100% 100%;
+	padding:1rem;
+	color: black;
+}
+.character input[type=text], .equippableItem input[type=text], .custom-dialog input[type=text]{
+	box-shadow:0px 0px;
+	color: black;
+    background:transparent;
+    border:1px solid black;
+}
+.character input[type=number], .equippableItem input[type=number], .custom-dialog input[type=number]{
+	box-shadow:0px 0px;
+	color: black;
+    background:transparent;
+    border:1px solid black;
+}
+.character select, .equippableItem select, .custom-dialog select{
+	background:transparent;
+	color: black;
+    border:1px solid black;
+}
+.custom-system-user-inputs td button {
+    color: black;
+}
+.character summary:before, .equippableItem summary:before, .custom-dialog summary:before {
+	border-color: transparent transparent transparent #000000;
+}
+.character input[type="checkbox"]::before, .equippableItem input[type="checkbox"]::before, .custom-dialog input[type="checkbox"]::before {
+    content:"\f0c8";
+    color: black;
+    font-weight:normal;
+}
+.character  input[type="checkbox"]:checked::after, .equippableItem  input[type="checkbox"]:checked::after, .custom-dialog  input[type="checkbox"]:checked::after {
+    content: "\f14a";
+    color: black;
+}
+.character input[type="checkbox"]:checked::before, .equippableItem input[type="checkbox"]:checked::before,  .custom-dialog input[type="checkbox"]:checked::before {
+    content: "\f14a\f14a";
+    color: transparent;
+}
+.custom-dialog .form-group > label {
+	color: black;
+}
+.character table, .equippableItem table, .custom-dialog table {
+	background:transparent;
+}
+.custom-system-number-field-control {
+	background:transparent;
+	color:black;
+	border:1px solid black;
+}
+.character input[type="radio"]::before, .equippableItem input[type="radio"]::before, .custom-dialog input[type="radio"]::before {
+    content:"";
+    color: black;
+    font-weight:normal;
+}
+.character input[type="radio"]:checked::before, .character  input[type="radio"]:checked::after, .equippableItem input[type="radio"]:checked::before,  .equippableItem  input[type="radio"]:checked::after, .custom-dialog input[type="radio"]:checked::before, .custom-dialog  input[type="radio"]:checked::after {
+    content: "";
+    color: black;
+}
+.character .content-link, .equippableItem .content-link, .custom-dialog .content-link {
+  background:transparent;
+  color: black;
+  border: 0px;
+}
+.custom-system-user-input-button {
+    background: rgba(0, 0, 0, 0.05);
+    border: 2px groove black;
+    color: black
+}
+.custom-dialog .standard-form .form-footer > button {
+  color:black;
+  background:transparent;
+  border: 2px groove black;
 }
 .margin_zero {
 	margin:0px;
 }
-.situationpanel {
+.situationpanel  > :first-child{
 	grid-template-columns: auto auto;
 	margin:0px;
 	gap:0px;
@@ -96,6 +169,7 @@
 .classtexts {
 	text-transform: uppercase;
 	margin:0px;
+	margin-top:10px;
 	font-family:"HamletOrNot";
 	font-size:10px;
 }
@@ -134,14 +208,14 @@
 	font-size:18px;
 	font-weight:bold;
 }
-.panelbigcurren {
+.panelbigcurren  > :first-child{
 	grid-template-columns: 30% 65%;
 }
-.panelcurrency {
+.panelcurrency  > :first-child{
 	grid-template-columns: 60px auto;
 	gap:2px 5px;
 }
-.paneltraitsbig{
+.paneltraitsbig  > :first-child{
 	font-family:"HamletOrNot";
 	grid-template-columns: 7% 7% 7% 7% 7% 7% 7% 7% 7% 17% 17%;
 	gap:0px;
@@ -641,9 +715,10 @@
 	background-image:url(../assets/d20.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	background-position: center;
-	margin:5px 0px 0px 0px;;
+	margin:auto;
+	margin-top:5px;
 }
 .panel20 {
 	background-color: #c992b6;
@@ -672,10 +747,11 @@
 	background-image:url(../assets/d18.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:90%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel18 {
 	background-color: #d8a172;
@@ -698,10 +774,11 @@
 	background-image:url(../assets/d16.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:90%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel16 {
 	background-color: #bdc5cf;
@@ -724,10 +801,11 @@
 	background-image:url(../assets/d14.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:90%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel14 {
 	background-color: #7ea793;
@@ -750,10 +828,11 @@
 	background-image:url(../assets/d12.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:73%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel12 {
 	background-color: #c2b39a;
@@ -776,10 +855,11 @@
 	background-image:url(../assets/d10.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:90%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel10 {
 	background-color: #c3d0bf;
@@ -802,10 +882,11 @@
 	background-image:url(../assets/d8.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:90%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel8 {
 	background-color: #a2cbec;
@@ -828,10 +909,11 @@
 	background-image:url(../assets/d6.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:70%;
 	background-position: center;
-	margin:10px 0px 0px 0px;;
+	margin:auto;
+	margin-top:10px;
 }
 .panel6 {
 	background-color: #eaae76;
@@ -854,10 +936,11 @@
 	background-image:url(../assets/d4.webp);
 	background-size: contain;
 	background-repeat:no-repeat;
-	height:50px;
+	min-height:50px;
 	width:80%;
 	background-position: center;
-	margin:5px 0px 0px 0px;;
+	margin:auto;
+	margin-top:5px;
 }
 .panel4 {
 	background-color: #c5a4b9;
@@ -920,7 +1003,6 @@
 	height:100%;
 }
 .panel20clearbottom {
-	background-color: #e2c3c0;
 	margin:0px 0px 4px 4px;
 	border-right:1.5px dotted black;
 	background-clip: border-box;
@@ -948,7 +1030,6 @@
 	height:100%;
 }
 .panel18clearbottom {
-	background-color: #e9caa2;
 	margin:0px 0px 0px 0px;
 	border-right:1.5px dotted black;
 	position:relative;
@@ -974,7 +1055,7 @@
 	height:100%;
 }
 .panel16clearbottom {
-	background-color: #ddd9cb;
+
 	margin:0px 0px 0px 0px;
 	border-right:1.5px dotted black;
 	position:relative;
@@ -1000,7 +1081,7 @@
 	height:100%;
 }
 .panel14clearbottom {
-	background-color: #c4c9b0;
+
 	margin:0px 0px 0px 0px;
 	border-right:1.5px dotted black;
 	position:relative;
@@ -1026,15 +1107,15 @@
 	height:100%;
 }
 .panel12clearbottom {
-	background-color: #ded0b5;
+
 	margin:0px 0px 7px 0px;
 	border-right:1.5px dotted black;
 	min-height:85px;
 	position:relative;
 	width:100%;
 	display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
 	height:94%;
 }
 .panel10clear {
@@ -1055,7 +1136,7 @@
 	width:100%;
 }
 .panel10clearbottom {
-	background-color: #e0dec5;
+
 	margin:0px 0px 0px 0px;
 	border-right:1.5px dotted black;
 	position:relative;
@@ -1081,7 +1162,7 @@
 	width:100%;
 }
 .panel8clearbottom {
-	background-color: #d5dbd5;
+
 	margin:0px 0px 0px 0px;
 	border-right:1.5px dotted black;
 	position:relative;
@@ -1106,8 +1187,17 @@
 	min-height:85px;
 	width:100%;
 }
+.flexcol:has(.panel6clearbottom), .flexcol:has(.panel4clearbottom), .flexcol:has(.panel8clearbottom), .flexcol:has(.panel10clearbottom), .flexcol:has(.panel12clearbottom), .flexcol:has(.panel12clearbottomret), .flexcol:has(.panel14clearbottom), .flexcol:has(.panel16clearbottom), .flexcol:has(.panel18clearbottom), .flexcol:has(.panel20clearbottom){
+	height:100%;
+}
+.flexcol:has(.panel12clearbottomret) {
+	width:100%
+}
+.flexcol:has(.panel6cleartop), .flexcol:has(.panel4cleartop), .flexcol:has(.panel8cleartop), .flexcol:has(.panel10cleartop), .flexcol:has(.panel12cleartop), .flexcol:has(.panel14cleartop), .flexcol:has(.panel16cleartop), .flexcol:has(.panel18cleartop), .flexcol:has(.panel20cleartop){
+	height:100%;
+}
 .panel6clearbottom {
-	background-color: #f1d0a4;
+
 	margin:0px 0px 0px 0px;
 	border-right:1.5px dotted black;
 	position:relative;
@@ -1132,8 +1222,17 @@
 	min-height:85px;
 	position:relative;
 }
+.panel4cleartop >:first-child {
+	display:block;
+}
+.panel4clear >:first-child {
+	display:block;
+}
+.panel4clearbottom >:first-child {
+	display:block;
+}
 .panel4clearbottom {
-	background-color: #d5bbb8;
+
 	margin:0px 3px 4px 0px;
 	background-clip: border-box;
 	min-height:85px;
@@ -1267,8 +1366,9 @@
 	transform: rotate(8deg);
 }
 .paneltabs {
-	position:relative;
-	display: flex;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 .panelbigtabs {
 	margin-bottom:10px;
@@ -1488,11 +1588,14 @@
 	margin:0px;
 }
 .meritspanel div{
-	margin:0px;
+	margin:auto;
 }
 .panelaux {
 	margin:0px;
 	background-color: #e2c3c0;
+}
+.panelaux >:first-child{
+	height:100%;
 }
 .panelaux18 {
 	width:100%;
@@ -1524,6 +1627,7 @@
 	margin:0px;
 	background-color: #ded0b5;
 	position:relative;
+	border-right: 1.5px dotted black;
 }
 .panelaux10 {
 	width:100%;
@@ -1549,6 +1653,9 @@
 	margin:0px;
 	background-color: #d5bbb8;
 }
+.panelaux4 >:first-child{
+	height:100%;
+}
 .panelaccoutcontainer {
 	border-style: solid;
     border-width: 2px 2px 2px 2px;
@@ -1566,7 +1673,7 @@
 	margin:0px;
 	left:0%;
 	width:100%;
-	bottom:16px;
+	bottom:40px;
 	left:-33%;
 	font-family:"HamletOrNot";
 	font-size:20px;
@@ -1587,17 +1694,6 @@
 	position:relative;
 	height:40px;
 }
-.header-fields {
-	position:relative;
-}
-div.custom-system-sheet-actions:first-of-type {
-	top:30px;
-}
-.custom-system-sheet-actions {
-	position:absolute;
-	right:0px;
-	top:0px;
-}
 .charname input[type="text"]{
 	font-family:'RegulaOldFace';
 	font-size:40px;
@@ -1606,24 +1702,25 @@ div.custom-system-sheet-actions:first-of-type {
 	border-color:black;
 	border-radius:0px;
 }
-.indiferentpanel {
-	border-style: solid;
-	border-width: 5px 7px;
-	border-image-source: url(../assets/Marco2.webp);
-	border-image-slice: 30% fill;
-	border-image-width: 10px 10px;
-	border-image-repeat: stretch;
-	line-height:20px;
-	padding-bottom:5px;
-	padding-left: 5px;
-	padding-right:5px;
-	font-family:"HamletOrNot";
-	font-size:20px;
-	position:absolute;
-	grid-template-columns: auto auto;
+.indiferentpanel > :first-child {
+    border-style: solid;
+    border-width: 5px 7px;
+    border-image-source: url(../assets/Marco2.webp);
+    border-image-slice: 30% fill;
+    border-image-width: 10px 10px;
+    border-image-repeat: stretch;
+    line-height: 20px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: "HamletOrNot";
+    font-size: 20px;
+    position: absolute;
+    grid-template-columns: auto auto;
     margin: 0px;
     gap: 0px;
-	right:18%;
+    right: 18%;
+    top: -5px;
 }
 .indiferenttext select{
 	text-align: center;
@@ -1637,7 +1734,7 @@ div.custom-system-sheet-actions:first-of-type {
     color: #ee1c25;
 	margin-top:5px;
 }
-.paneldeathloony {
+.paneldeathloony  > :first-child{
 	grid-template-columns: 50% 50%;
 	border-style: solid;
 	border-width: 15px 15px;
@@ -1647,11 +1744,12 @@ div.custom-system-sheet-actions:first-of-type {
 	border-image-repeat: stretch;
 	position:relative;
 }
-.paneldeath {
+.paneldeath  > :first-child{
 	grid-template-columns: 19% 15% 15% 17% 16% 11%;
 	gap:5px;
 	background-image:url(../assets/TrackDeath.webp);
 	background-size:100% 100%;
+	margin:0px;
 }
 .labeldeathloony {
 	font-family:"HamletOrNot";
@@ -1659,9 +1757,10 @@ div.custom-system-sheet-actions:first-of-type {
 	margin:0px;
 }
 .paneldeathelement {
-	position:relative;
-	height:50px;
-	display:flex
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
 }
 .radiodeathcheck {
     position: absolute;
@@ -1695,11 +1794,12 @@ div.custom-system-sheet-actions:first-of-type {
 .radiodeathC input[type="radio"]:not(:disabled):checked {
     transform: rotate(-7deg);
 }
-.panelloony {
+.panelloony  > :first-child{
 	grid-template-columns: 19% 15% 15% 17% 16% 11%;
 	gap:5px;
 	background-image:url(../assets/TrackLoony.webp);
 	background-size:100% 100%;
+	margin:0px;
 }
 .deathstatuslabel{
 	position:absolute;
@@ -2092,7 +2192,7 @@ div.custom-system-sheet-actions:first-of-type {
 	font-family: "RegulaOldFace";
 	font-size:16px;
 }
-.cost_panel{
+.cost_panel  > :first-child{
 	grid-template-columns: auto 30%;
 }
 .costnum input[type="text"] {
@@ -2104,7 +2204,7 @@ div.custom-system-sheet-actions:first-of-type {
     border-color: black;
     border-radius: 0px;
 }
-.panelother {
+.panelother  > :first-child{
 	grid-template-columns: auto auto;
 }
 .edittitle {
@@ -2115,10 +2215,10 @@ div.custom-system-sheet-actions:first-of-type {
 	border-right: 2px solid black;
 	padding-right:10px;
 }
-.panelmodsbig{
+.panelmodsbig  > :first-child{
 	gap:0px;
 }
-.panelselectedit {
+.panelselectedit  > :first-child{
 	grid-template-columns: auto auto;
 }
 .paneledit{
@@ -2166,13 +2266,11 @@ div.custom-system-sheet-actions:first-of-type {
     background: transparent;
 	text-align:right;
 }
-.panelret {
+.panelret  > :first-child{
 	gap:0px;
 }
 .panel12clearbottomret {
-    background-color: #ded0b5;
     margin: 0px 0px 7px 0px;
-    border-right: 1.5px dotted black;
     min-height: 85px;
     position: relative;
     width: 100%;
@@ -2180,6 +2278,7 @@ div.custom-system-sheet-actions:first-of-type {
     justify-content: center;
     align-items: center;
     height: 94%;
+	border-right: 1.5px dotted black;
 }
 .custom-system-user-inputs {
 	font-family: 'RegulaOldFace';
@@ -2203,15 +2302,15 @@ div.custom-system-sheet-actions:first-of-type {
 	display:flex;
 	align-items: center;
 }
-.custom-system-user-input-block {
+.custom-system-user-input-block  > :first-child{
 	display:grid;
 	grid-template-columns: auto auto auto;
 	justify-content: end;
 }
-.custom-system-user-input-button[data-action="sub-10"] {
+.custom-system-user-input-button[data-inputaction="sub-10"] {
 	display:none;
 }
-.custom-system-user-input-button[data-action="add-10"] {
+.custom-system-user-input-button[data-inputaction="add-10"] {
 	display:none;
 }
 .custom-system-user-inputs tr:nth-child(even) {
@@ -2326,11 +2425,12 @@ div.custom-system-sheet-actions:first-of-type {
 	box-shadow: 0 0 0px;
 }
 .imgd4 a{
-	height: 70%;
+	min-height: 70%;
     width: 100%;
+	margin:auto;
 	margin-top:5px;
 }
-.dicenpcpanel {
+.dicenpcpanel  > :first-child{
 	grid-template-columns: auto auto auto;
     margin: 0px;
     gap: 0px;
@@ -2351,7 +2451,10 @@ div.custom-system-sheet-actions:first-of-type {
 	text-align:center;
 	margin:0px;
 }
-.paneldeedsdefeat {
+.attackdefenselabel .custom-system-rollable > *{
+	color: #ece7d2;
+}
+.paneldeedsdefeat  > :first-child{
 	grid-template-columns: 65% 35%;
     margin: 0px;
     gap: 0px;
@@ -2401,7 +2504,6 @@ div.custom-system-sheet-actions:first-of-type {
 	height:50px;
 	width:50px;
 	left:8%;
-	top:-55%;
 	pointer-events:none;
 	filter: drop-shadow(0px 0px  3px #ece7d2);
 }
@@ -2477,7 +2579,7 @@ div.custom-system-sheet-actions:first-of-type {
 	background-position: center;
 	margin:5px 0px 0px 0px;
 }
-.paneldeednumber {
+.paneldeednumber  > :first-child{
 	grid-template-columns: auto auto auto;
     margin: 0px;
     gap: 0px;
@@ -2519,6 +2621,7 @@ div.custom-system-sheet-actions:first-of-type {
 	border-width: 0px 0px 1.5px 0px;
 	border-radius:0px;
 	border-color:black;
+	padding:0px;
 }
 .attacktable table tr td:nth-child(2){
 	grid-column: 2 / span 1;
@@ -2556,6 +2659,7 @@ div.custom-system-sheet-actions:first-of-type {
 	border-width: 0px 0px 1.5px 0px;
 	border-radius:0px;
 	border-color:black;
+	padding:0px;
 }
 .attacktable table tr td:nth-child(4){
 	grid-column: 4 / span 1;
@@ -2602,6 +2706,7 @@ div.custom-system-sheet-actions:first-of-type {
 .attacktable table tr td:nth-child(7){
 	grid-column: 6 / span 1;
 	order:6;
+	padding:0px;
 }
 .attacktable table tr td:nth-child(6){
 	grid-column: 1 / span 5;
@@ -2612,13 +2717,13 @@ div.custom-system-sheet-actions:first-of-type {
 .attacktable table tr td:nth-child(6) p{
 	margin:0px;
 }
-.attacktable table tr:last-child td:first-child{
-	display:none;
-}
 .attacktable table tr:last-child td:nth-child(2){
 	background:transparent;
 }
-.panelattackdice{
+.attacktable table tr:last-child td:first-child{
+	display:none;
+}
+.panelattackdice  > :first-child{
 	background: url(../assets/Background_textosNPC4.webp);
 	background-size: 100% 100%;
 	background-blend-mode: multiply;
@@ -2666,7 +2771,7 @@ div.custom-system-sheet-actions:first-of-type {
 	font-family: "Calibri";
 	font-size:15px;
 }
-.panelsirioussilly {
+.panelsirioussilly  > :first-child{
 	display:grid;
 	grid-template-columns: auto auto;
 	align-items: flex-end;
@@ -2675,7 +2780,7 @@ div.custom-system-sheet-actions:first-of-type {
 .panelbigserioussilli{
 	border-bottom: 2px dotted black;
 }
-.panelhistory {
+.panelhistory  > :first-child{
 	gap:20px;
 }
 .specialattacktable table{
@@ -2719,6 +2824,7 @@ div.custom-system-sheet-actions:first-of-type {
 .specialattacktable table tr td:nth-child(3){
 	grid-column: 2 / span 1;
 	order:2;
+	padding:0px;
 }
 .specialattacktable table tr td:nth-child(2){
 	grid-column: 1 / span 5;
@@ -2739,7 +2845,7 @@ div.custom-system-sheet-actions:first-of-type {
 	text-align:justify;
 	margin:5px 6px;
 }
-.panelclassnpc {
+.panelclassnpc  > :first-child{
 	background: url(../assets/Background_textosNPCfull.webp);
 	background-size: auto;
 	background-blend-mode: multiply;
@@ -2772,7 +2878,7 @@ div.custom-system-sheet-actions:first-of-type {
 	font-size:15px;
 	margin:0px;
 }
-.checkspec {
+.checkspec  > :first-child{
 	width:auto;
 	display:grid;
 	grid-template-columns: auto auto;
@@ -2796,7 +2902,6 @@ div.custom-system-sheet-actions:first-of-type {
 	font-family: "Calibri";
 	text-transform: uppercase;
 	font-size:15px;
-	align-items: flex-end;
 }
 .beshcompnum{
 	font-family: "CalibriBold";
@@ -2809,8 +2914,9 @@ div.custom-system-sheet-actions:first-of-type {
 	border-width: 0px 0px 1px 0px;
 	border-color:black;
 	border-radius:0px;
+	padding:0px;
 }
-.paneltophole {
+.paneltophole  > :first-child{
 	display:grid;
 	grid-template-columns: auto 10% auto auto 20%;
 	gap:0px;
@@ -2863,6 +2969,7 @@ div.custom-system-sheet-actions:first-of-type {
 	border-width: 0px 0px 1.5px 0px;
 	border-radius:0px;
 	border-color:black;
+	padding:0px;
 }
 .beshrewmenttable table tr td:nth-child(2){
 	grid-column: 2 / span 1;
@@ -2888,6 +2995,7 @@ div.custom-system-sheet-actions:first-of-type {
 	border-width: 0px 0px 1.5px 0px;
 	border-radius:0px;
 	border-color:black;
+	padding:0px;
 }
 .beshrewmenttable table tr td:nth-child(4){
 	grid-column: 4 / span 1;
@@ -2907,6 +3015,7 @@ div.custom-system-sheet-actions:first-of-type {
 .beshrewmenttable table tr td:nth-child(6){
 	grid-column: 5 / span 1;
 	order:5;
+	padding:0px;
 }
 .beshrewmenttable table tr td:nth-child(5){
 	grid-column: 1 / span 5;
@@ -2984,7 +3093,7 @@ div.custom-system-sheet-actions:first-of-type {
 	font-size:20px;
 	color: #ee1c25;
 }
-.panelheader1 {
+.panelheader1  > :first-child{
     grid-template-columns: 32% 68%;
     gap: 10px;
     font-family: "HamletOrNot";
