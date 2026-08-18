@@ -85,7 +85,12 @@
       "name": "Español",
       "path": "lang/es.json",
       "flags": {}
-    }
+    },
+	{ "lang": "uk", 
+	  "name": "Українська",
+	  "path": "lang/uk.json",
+	  "flags": {} 
+	}
   ],
   "url": "https://github.com/pedrobaringo/monty-pythons-cocurricular-mediaeval-reenactment-programme-csb",
   "manifest": "https://github.com/pedrobaringo/monty-pythons-cocurricular-mediaeval-reenactment-programme-csb/releases/latest/download/module.json",
